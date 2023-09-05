@@ -1,4 +1,4 @@
-# Test Wallet Connect
+# OrdConnect
 
 - Get wallet manager
 <WalletManager />
