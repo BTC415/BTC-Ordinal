@@ -1,7 +1,6 @@
 # OrdConnect
 
-- Get wallet manager
-<WalletManager />
+- Get wallet manager <WalletManager />
 
 - To send btc (in sats)
 send(amount: number, address: string, session)
