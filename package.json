@@ -1,13 +1,20 @@
 {
-  "name": "testconnect-ordkit",
+  "name": "ordconnect",
   "private": false,
   "version": "0.1.36",
-  "description": "Test Connect Description",
-  "author": "Test Connect Mike",
+  "description": "OrdConnect Description",
+  "author": "Michael Shimeles",
   "keywords": [
     "web3",
     "React",
-    "connect"
+    "connect",
+    "ordinals",
+    "ordinal",
+    "ordinal wallet",
+    "ordinal wallet manager",
+    "leather hiro wallet",
+    "xverse wallet",
+    "unisat wallet"
   ],
   "main": "./dist/esm/components/index.js",
   "module": "./dist/esm/components/index.js",

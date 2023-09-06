@@ -1,4 +1,4 @@
-# Test Wallet Connect
+# OrdConnect
 
 <WalletManager />
 send(amount: number, address: string, session)
