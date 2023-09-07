@@ -49,7 +49,7 @@ Contributions are welcome!
 If you encounter any issues or have suggestions for improvement, please open an issue on the GitHub repository.
 
 ## Credits
-OrdConnect is developed and maintained by Your Name.
+OrdConnect is developed and maintained by Michael Shimeles.
 
 ## Acknowledgments
 Special thanks to the developers of the btckit library for their contributions and support.
