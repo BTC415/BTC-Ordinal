@@ -5,9 +5,8 @@ import { signature } from './components/signature';
 
 const App = () => {
 
+  // Get wallet info and user session
   const useSession = GetSession()
-
-  console.log("Session", useSession)
 
   return (
     <Flex direction="column" justify="between" align="center" height="100%" gap="5">

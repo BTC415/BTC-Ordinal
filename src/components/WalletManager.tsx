@@ -58,8 +58,11 @@ if (typeof window !== 'undefined') {
     // Your client-side code that uses window here
     unisat = (window as any).unisat;
 }
+interface WalletManagerProps {
+    mode?: string 
+}
 
-const WalletManager = () => {
+const WalletManager: React.FC<WalletManagerProps> = ({ mode }) => {
     const [cookies, setCookie, removeCookie] = useCookies(["sessionId"]);
     const [open, setOpen] = React.useState(false);
     const [session, setSession] = useState<{
@@ -227,7 +230,7 @@ const WalletManager = () => {
 
     return (
         <CookiesProvider>
-            <Theme appearance='dark'>
+            <Theme appearance={mode as any || "dark"}>
                 <Dialog.Root open={open}>
                     <Dialog.Trigger onClick={() => setOpen(true)}>
                         {session?.ordinalAddress ?
