@@ -18,15 +18,22 @@ import { WalletManager } from 'ord-connect';
 
 
 ## Sending Bitcoin (BTC)
-send(amount: number, address: string, session: {
+send(amount: number, address: string, session: Session);
+
+```
+Session type:  {
         cardinalAddress: string,
         id: string,
         ordinalAddress: string,
         wallet: string,
-    } | null);
+} | null
+```
 
 ## Signing PSBTs
-signPsbt(params: {
+signPsbt(params: Params)
+
+```
+Params type:  {
   psbtBase64: string,
   inputsToSign: [{
     address: string,
@@ -34,7 +41,7 @@ signPsbt(params: {
   }],
   broadcast: boolean,
 }
-);
+```
 
 ## Bitcoin Kit Functions
 All the Bitcoin-related functions available in the btckit library are also accessible through this library. Please refer to the btckit documentation for detailed information on these functions.
@@ -42,7 +49,7 @@ All the Bitcoin-related functions available in the btckit library are also acces
 ## License
 This project is licensed under the MIT License.
 
-##Contributing
+## Contributing
 Contributions are welcome!
 
 ## Issues
