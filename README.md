@@ -13,7 +13,7 @@ yarn add ordconnect
 ```
 # Usage
 
-##Get Wallet Manager
+Get Wallet Manager
 import { WalletManager } from 'ord-connect';
 
 
