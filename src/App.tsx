@@ -1,6 +1,7 @@
-import { Flex } from '@radix-ui/themes';
+import { Flex, Button } from '@radix-ui/themes';
 import React from 'react';
 import WalletManager, { GetSession } from './components/WalletManager';
+import { signature } from './components/signature';
 
 const App = () => {
 
@@ -11,6 +12,7 @@ const App = () => {
   return (
     <Flex direction="column" justify="between" align="center" height="100%" gap="5">
       <WalletManager />
+      <Button onClick={() => signature("Testing Signature", useSession)}>Sign</Button>
     </Flex>
   )
 }
