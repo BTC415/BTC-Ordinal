@@ -13,7 +13,7 @@ yarn add ordconnect
 ```
 # Usage
 
-Get Wallet Manager
+## Get Wallet Manager
 import { WalletManager } from 'ord-connect';
 
 
@@ -21,7 +21,7 @@ import { WalletManager } from 'ord-connect';
 send(amount: number, address: string, session: Session);
 
 ```
-Session type:  {
+Session: {
         cardinalAddress: string,
         id: string,
         ordinalAddress: string,
@@ -33,7 +33,7 @@ Session type:  {
 signPsbt(params: Params)
 
 ```
-Params type:  {
+Params: {
   psbtBase64: string,
   inputsToSign: [{
     address: string,

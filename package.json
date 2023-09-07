@@ -1,8 +1,8 @@
 {
   "name": "ordconnect",
   "private": false,
-  "version": "0.1.0",
-  "description": "OrdConnect Description",
+  "version": "0.1.1",
+  "description": "An Ordinals Wallet Manager",
   "author": "Michael Shimeles",
   "keywords": [
     "web3",
