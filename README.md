@@ -10,7 +10,7 @@ You can install OrdConnect via npm or yarn:
 npm install ordconnect
 # or
 yarn add ordconnect
-
+```
 # Usage
 
 ##Get Wallet Manager
