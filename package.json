@@ -1,9 +1,13 @@
 {
   "name": "ordconnect",
   "private": false,
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "An Ordinals Wallet Manager",
   "author": "Michael Shimeles",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelshimeles/ordconnect"
+  },
   "keywords": [
     "web3",
     "React",

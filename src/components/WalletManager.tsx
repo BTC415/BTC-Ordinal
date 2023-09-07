@@ -59,7 +59,7 @@ if (typeof window !== 'undefined') {
     unisat = (window as any).unisat;
 }
 interface WalletManagerProps {
-    mode?: string,
+    mode?: "light" | "dark" | undefined,
     color: "ruby" | "tomato" | "red" | "crimson" | "pink" | "plum" | "purple" | "violet" | "iris" | "indigo" | "blue" | "cyan" | "teal" | "jade" | "green" | "grass" | "brown" | "orange" | "sky" | "mint" | "lime" | "yellow" | "amber" | "gold" | "bronze" | "gray" | undefined
 }
 
