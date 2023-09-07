@@ -59,10 +59,11 @@ if (typeof window !== 'undefined') {
     unisat = (window as any).unisat;
 }
 interface WalletManagerProps {
-    mode?: string 
+    mode?: string,
+    color: "ruby" | "tomato" | "red" | "crimson" | "pink" | "plum" | "purple" | "violet" | "iris" | "indigo" | "blue" | "cyan" | "teal" | "jade" | "green" | "grass" | "brown" | "orange" | "sky" | "mint" | "lime" | "yellow" | "amber" | "gold" | "bronze" | "gray" | undefined
 }
 
-const WalletManager: React.FC<WalletManagerProps> = ({ mode }) => {
+const WalletManager: React.FC<WalletManagerProps> = ({ mode, color }) => {
     const [cookies, setCookie, removeCookie] = useCookies(["sessionId"]);
     const [open, setOpen] = React.useState(false);
     const [session, setSession] = useState<{
@@ -234,7 +235,7 @@ const WalletManager: React.FC<WalletManagerProps> = ({ mode }) => {
                 <Dialog.Root open={open}>
                     <Dialog.Trigger onClick={() => setOpen(true)}>
                         {session?.ordinalAddress ?
-                            <Button variant="surface" color="amber" highContrast>
+                            <Button variant="surface" color={color} highContrast>
                                 <Avatar
                                     src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=64&h=64&dpr=2&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
                                     fallback="S"
@@ -245,9 +246,10 @@ const WalletManager: React.FC<WalletManagerProps> = ({ mode }) => {
                                 <Text>{session?.ordinalAddress?.substr(0, 15)}...</Text>
                             </Button>
                             :
-                            <Button variant="outline">
+                            <Button variant="outline" color={color}>
                                 Connect Wallet
-                            </Button>}
+                            </Button>
+                        }
                     </Dialog.Trigger>
 
                     <Dialog.Content style={{ maxWidth: 450 }}>
@@ -261,7 +263,7 @@ const WalletManager: React.FC<WalletManagerProps> = ({ mode }) => {
                                 <label>
                                     <Text as="div" size="2" mb="1" weight="bold">Most Popular</Text>
                                 </label>
-                                <Button onClick={() => walletConnect("hiro", null)} variant="outline" >
+                                <Button onClick={() => walletConnect("hiro", null)} variant="outline" color={color}>
                                     <img style={{
                                         width: '1.5rem',
                                         borderRadius: "100%"
@@ -272,7 +274,7 @@ const WalletManager: React.FC<WalletManagerProps> = ({ mode }) => {
                                 <Button onClick={async () => {
                                     const result = await unisat.requestAccounts();
                                     walletConnect("unisat", result)
-                                }} variant="outline">
+                                }} variant="outline" color={color}>
                                     <img style={{
                                         width: '1rem',
                                         borderRadius: "100%"
@@ -282,7 +284,7 @@ const WalletManager: React.FC<WalletManagerProps> = ({ mode }) => {
                                 </Button>
                                 <Button onClick={async () => {
                                     walletConnect("xverse", null)
-                                }} variant="outline">
+                                }} variant="outline" color={color}>
                                     <img style={{
                                         width: '1rem',
                                         borderRadius: "100%"
@@ -300,12 +302,12 @@ const WalletManager: React.FC<WalletManagerProps> = ({ mode }) => {
                                             borderRadius: "100%"
                                         }}
                                             src="https://cdn.discordapp.com/attachments/491727714102018088/1148750793642623017/fA12aBLU_400x400.jpg" />
-                                        <Text color="gray">Unisat Wallet Connected</Text>
+                                        <Text color={color}>Unisat Wallet Connected</Text>
                                         <motion.div
                                             animate={{ opacity: [1, 0, 1] }}  // Animating the opacity from 1 to 0 and then back to 1
                                             transition={{ duration: 2, repeat: Infinity }}  // Duration of animation and repeat it indefinitely
                                         >
-                                            <BiSolidCircle color="green" />
+                                            <BiSolidCircle color={color} />
                                         </motion.div>
                                     </Flex>}
                                 {session?.wallet === "hiro" &&
@@ -370,7 +372,7 @@ const WalletManager: React.FC<WalletManagerProps> = ({ mode }) => {
                                         </TextField.Root>}
 
                                 </Flex>
-                                <Button variant="outline" onClick={() => {
+                                <Button variant="outline" color={color} onClick={() => {
                                     signout()
                                 }}><Text>Sign Out</Text></Button>
                             </Flex>}
