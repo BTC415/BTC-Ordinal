@@ -10,7 +10,7 @@ const App = () => {
 
   return (
     <Flex direction="column" justify="between" align="center" height="100%" gap="5">
-      <WalletManager color="bronze" mode='light'/> 
+      <WalletManager color="bronze" mode='light' />
     </Flex>
   )
 }

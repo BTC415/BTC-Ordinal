@@ -253,7 +253,7 @@ const WalletManager: React.FC<WalletManagerProps> = ({ mode, color }) => {
                     </Dialog.Trigger>
 
                     <Dialog.Content style={{ maxWidth: 450 }}>
-                        <Dialog.Title>OrdConnect</Dialog.Title>
+                        <Dialog.Title>OrdConnect ⚡️</Dialog.Title>
 
                         {!session ? <>
                             <Dialog.Description size="2" mb="4">
