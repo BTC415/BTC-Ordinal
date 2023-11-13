@@ -12,6 +12,7 @@ import { db } from "./db/db";
 import { Theme } from '@radix-ui/themes';
 import { CookiesProvider } from 'react-cookie';
 
+
 // Get Session
 export const GetSession = () => {
     const [cookies] = useCookies(["sessionId"]);
@@ -60,10 +61,11 @@ if (typeof window !== 'undefined') {
 }
 interface WalletManagerProps {
     mode?: "light" | "dark" | undefined,
-    color: "ruby" | "tomato" | "red" | "crimson" | "pink" | "plum" | "purple" | "violet" | "iris" | "indigo" | "blue" | "cyan" | "teal" | "jade" | "green" | "grass" | "brown" | "orange" | "sky" | "mint" | "lime" | "yellow" | "amber" | "gold" | "bronze" | "gray" | undefined
+    color: "ruby" | "tomato" | "red" | "crimson" | "pink" | "plum" | "purple" | "violet" | "iris" | "indigo" | "blue" | "cyan" | "teal" | "jade" | "green" | "grass" | "brown" | "orange" | "sky" | "mint" | "lime" | "yellow" | "amber" | "gold" | "bronze" | "gray" | undefined,
+    customSessionStorage?: boolean
 }
 
-const WalletManager: React.FC<WalletManagerProps> = ({ mode, color }) => {
+const WalletManager: React.FC<WalletManagerProps> = ({ mode, color, customSessionStorage }) => {
     const [cookies, setCookie, removeCookie] = useCookies(["sessionId"]);
     const [open, setOpen] = React.useState(false);
     const [session, setSession] = useState<{

@@ -6,12 +6,18 @@ const App = () => {
 
   // Get wallet info and user session
   const useSession = GetSession()
-  console.log("Session", useSession)
 
+  console.log("Session", useSession)
+  /* 
+  This is for myself just had an idea
+  Add a custom session prop that’s Boolean to wallet manager component
+  If true, then the session creating function will be exported and user can user their own storage to store session info
+  Verses indexeddb
+
+  use session server side
+  */
   return (
-    <Flex direction="column" justify="between" align="center" height="100%" gap="5">
-      <WalletManager color="bronze" mode='light' />
-    </Flex>
+    <WalletManager color="bronze" mode='light' customSessionStorage={false} />
   )
 }
 
