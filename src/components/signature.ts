@@ -1,11 +1,11 @@
 import { BitcoinNetworkType, signTransaction } from "sats-connect";
 
-interface MyCustomWindow extends Window {
-  btc: {
-    request: any;
-    listen: any;
-  };
-}
+// interface MyCustomWindow extends Window {
+//   btc: {
+//     request: any;
+//     listen: any;
+//   };
+// }
 
 export const signature = async (
   message: string,
@@ -57,21 +57,21 @@ export const signature = async (
     }
   }
 
-  if (session?.wallet === "hiro") {
-    const customWindow: MyCustomWindow = window as unknown as MyCustomWindow;
+  // if (session?.wallet === "hiro") {
+  //   const customWindow: MyCustomWindow = window as unknown as MyCustomWindow;
 
-    const response = await customWindow?.btc?.request("signMessage", {
-      message: `${message} \n
-      Owned and Signed by ${session?.ordinalAddress}
-      `,
-      paymentType: "p2tr",
-    });
+  //   const response = await customWindow?.btc?.request("signMessage", {
+  //     message: `${message} \n
+  //     Owned and Signed by ${session?.ordinalAddress}
+  //     `,
+  //     paymentType: "p2tr",
+  //   });
 
-    if (response) {
-      return response;
-    }
-    return "Not Signed";
-  }
+  //   if (response) {
+  //     return response;
+  //   }
+  //   return "Not Signed";
+  // }
 
   return;
 };

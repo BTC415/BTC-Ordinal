@@ -137,41 +137,41 @@ const WalletManager: React.FC<WalletManagerProps> = ({ mode, color }) => {
         }
 
         // Connecting to Hiro wallet
-        if (wallet === "hiro") {
-            const result: any = await window.btc?.request("getAddresses", {
-                types: ["p2tr", "p2wpkh"],
-            });
+        // if (wallet === "hiro") {
+        //     const result: any = await window.btc?.request("getAddresses", {
+        //         types: ["p2tr", "p2wpkh"],
+        //     });
 
-            const walletInfo = {
-                ordinalAddress: result?.result?.addresses[1].address,
-                cardinalAddress: result?.result?.addresses[0].address,
-                wallet: "hiro",
-            };
+        //     const walletInfo = {
+        //         ordinalAddress: result?.result?.addresses[1].address,
+        //         cardinalAddress: result?.result?.addresses[0].address,
+        //         wallet: "hiro",
+        //     };
 
-            try {
-                // Create session id
-                const sessionId = uuidv4();
+        //     try {
+        //         // Create session id
+        //         const sessionId = uuidv4();
 
-                // Create session object
-                const sessionObject = {
-                    id: sessionId,
-                    ordinalAddress: walletInfo?.ordinalAddress,
-                    cardinalAddress: walletInfo?.cardinalAddress,
-                    wallet: walletInfo?.wallet,
-                };
-                // Set cookie in browser
-                setCookie("sessionId", sessionId, { path: "/" });
-                // Set session info in indexedDB
-                await db.session.add(sessionObject);
+        //         // Create session object
+        //         const sessionObject = {
+        //             id: sessionId,
+        //             ordinalAddress: walletInfo?.ordinalAddress,
+        //             cardinalAddress: walletInfo?.cardinalAddress,
+        //             wallet: walletInfo?.wallet,
+        //         };
+        //         // Set cookie in browser
+        //         setCookie("sessionId", sessionId, { path: "/" });
+        //         // Set session info in indexedDB
+        //         await db.session.add(sessionObject);
 
-                setOpen(false)
+        //         setOpen(false)
 
-                return walletInfo;
-            } catch (error: any) {
-                console.log("Hiro Error", error)
-                throw new Error(error);
-            }
-        }
+        //         return walletInfo;
+        //     } catch (error: any) {
+        //         console.log("Hiro Error", error)
+        //         throw new Error(error);
+        //     }
+        // }
 
         // Connecting to Xverse wallet
         if (wallet === "xverse") {
@@ -264,14 +264,14 @@ const WalletManager: React.FC<WalletManagerProps> = ({ mode, color }) => {
                                 <label>
                                     <Text as="div" size="2" mb="1" weight="bold">Most Popular</Text>
                                 </label>
-                                <Button onClick={() => walletConnect("hiro", null)} variant="outline" color={color}>
+                                {/* <Button onClick={() => walletConnect("hiro", null)} variant="outline" color={color}>
                                     <img style={{
                                         width: '1.5rem',
                                         borderRadius: "100%"
                                     }}
                                         src="https://cdn.discordapp.com/attachments/491727714102018088/1148748035141156874/hiro.png" />
                                     <Text>Leather (Hiro) Connect</Text>
-                                </Button>
+                                </Button> */}
                                 <Button onClick={async () => {
                                     const result = await unisat.requestAccounts();
                                     walletConnect("unisat", result)
@@ -311,7 +311,7 @@ const WalletManager: React.FC<WalletManagerProps> = ({ mode, color }) => {
                                             <BiSolidCircle color={color} />
                                         </motion.div>
                                     </Flex>}
-                                {session?.wallet === "hiro" &&
+                                {/* {session?.wallet === "hiro" &&
                                     <Flex width="100%" gap="2" align="center">
                                         <img style={{
                                             width: '2rem',
@@ -326,7 +326,7 @@ const WalletManager: React.FC<WalletManagerProps> = ({ mode, color }) => {
                                             <BiSolidCircle color="green" />
                                         </motion.div>
                                     </Flex>
-                                }
+                                } */}
                                 {session?.wallet === "xverse" &&
                                     <Flex width="100%" gap="2" align="center">
                                         <img style={{

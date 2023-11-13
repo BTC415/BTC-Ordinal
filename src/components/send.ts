@@ -23,12 +23,12 @@ export const send = async (
     unisat.sendBitcoin(address, amount);
   }
 
-  if (session?.wallet === "hiro") {
-    window.btc?.request("sendTransfer", {
-      address,
-      amount,
-    });
-  }
+  // if (session?.wallet === "hiro") {
+  //   window.btc?.request("sendTransfer", {
+  //     address,
+  //     amount,
+  //   });
+  // }
 
   if (session?.wallet === "xverse") {
     await sendBtcTransaction({
