@@ -20,6 +20,11 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "target": "ES6",
-    "baseUrl": "./src"
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }    
   }
 }
