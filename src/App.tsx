@@ -1,4 +1,3 @@
-import { Flex } from '@radix-ui/themes';
 import React from 'react';
 import WalletManager, { GetSession } from './components/WalletManager';
 
@@ -17,7 +16,7 @@ const App = () => {
   use session server side
   */
   return (
-    <WalletManager color="bronze" mode='light' customSessionStorage={false} />
+    <WalletManager color="bronze" mode='light' />
   )
 }
 
