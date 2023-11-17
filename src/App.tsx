@@ -1,12 +1,12 @@
 import React from 'react';
 import WalletManager, { GetSession } from './components/WalletManager';
-import "./index.css"
+import "./index.css";
 const App = () => {
 
   // Get wallet info and user session
-  const useSession = GetSession()
+  const session = GetSession()
 
-  console.log("Session", useSession)
+  console.log("Session", session)
 
   return (
     <>

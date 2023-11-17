@@ -6,7 +6,7 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger
-} from "@/components/ui/dialog";
+} from "../components/ui/dialog";
 import '@btckit/types';
 import { useLiveQuery } from "dexie-react-hooks";
 import { motion } from "framer-motion";
@@ -17,6 +17,7 @@ import { getAddress } from 'sats-connect';
 import { v4 as uuidv4 } from "uuid";
 import { db } from "./db/db";
 import { Button } from "./ui/button";
+
 // Get Session
 export const GetSession = () => {
     const [cookies] = useCookies(["sessionId"]);
@@ -67,7 +68,7 @@ interface WalletManagerProps {
 
 }
 
-const WalletManager: React.FC<WalletManagerProps> = ({ }) => {
+const WalletManager: React.FC<WalletManagerProps> = () => {
     const [cookies, setCookie, removeCookie] = useCookies(["sessionId"]);
     const [open, setOpen] = React.useState(false);
     const [session, setSession] = useState<{
@@ -201,9 +202,8 @@ const WalletManager: React.FC<WalletManagerProps> = ({ }) => {
             <Dialog open={open} onOpenChange={setOpen}>
                 <DialogTrigger onClick={() => setOpen(true)}>
                     {session?.ordinalAddress ?
-                        <Button variant="default">
-
-                            <p>Wallet Connected</p>
+                        <Button variant="outline">
+                            <p>Connected</p>
                         </Button>
                         :
                         <Button variant="outline">Connect Wallet</Button>
@@ -217,18 +217,18 @@ const WalletManager: React.FC<WalletManagerProps> = ({ }) => {
                             <DialogDescription>
                                 Connect with your favourite wallet provider.
                             </DialogDescription>
-                            <div className='flex flex-col gap-2 pt-4'>
+                            <div className='flex flex-col gap-3 pt-4'>
                                 <Button variant="outline" className="gap-2" onClick={async () => {
                                     const result = await unisat.requestAccounts();
                                     walletConnect("unisat", result)
                                 }}>
-                                    <img src="/logo_unisat.svg" className="w-4" />
+                                    {/* <img src="/logo_unisat.svg" className="w-4" /> */}
                                     <p>Unisat Connect</p>
                                 </Button>
                                 <Button className="gap-2" onClick={async () => {
                                     walletConnect("xverse", null)
                                 }} variant="outline">
-                                    <img src="/logo_dark.svg" className="w-4" />
+                                    {/* <img src="/logo_dark.svg" className="w-4" /> */}
                                     <p>Xverse Connect</p>
                                 </Button>
                             </div>
